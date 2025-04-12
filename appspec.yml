@@ -4,12 +4,8 @@ files:
   - source: /
     destination: /home/ec2-user/app
 
-# Remove this if you don't have or need it
-
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: scripts/stop_container.sh
       timeout: 180
       runas: root
-
-# Removed stopcontainer.sh
