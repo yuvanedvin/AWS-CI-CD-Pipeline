@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/app
 
+# Remove this if you don't have or need it
 hooks:
   ApplicationStop:
-    - location: /scripts/stop_container.sh
-      timeout: 300
-      runas: root
-  AfterInstall:
-    - location: /scripts/start_container.sh
-      timeout: 300
+    - location: scripts/stop_container.sh
+      timeout: 180
       runas: root
